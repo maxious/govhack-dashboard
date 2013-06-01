@@ -1,9 +1,9 @@
 <% content_for(:title) { "My super sweet dashboard" } %>
      <script type='text/javascript'>
 $(function() {
-Dashing.gridsterLayout('[{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1}]')
   Dashing.widget_base_dimensions = [370, 340]
   Dashing.numColumns = 5
+Dashing.gridsterLayout('[{"col":2,"row":1,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":2,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":3,"size_y":1},{"col":1,"row":3,"size_x":3,"size_y":1}]')
 });
 setTimeout(function () { location.reload(1); }, 1000*60*30);
 </script>
@@ -35,6 +35,10 @@ setTimeout(function () { location.reload(1); }, 1000*60*30);
       <i class="icon-download-alt icon-background"></i>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="hackerspacehits" data-view="Number" data-title="HackerSpace hits" style="background-color:#dbdb8d;"></div>
+      <i class="icon-cogs icon-background"></i>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="hackers" data-view="Number" data-title="Registered Hackers" style="background-color:#FC67B6;"></div>
       <i class="icon-legal icon-background"></i>
     </li>
@@ -47,7 +51,7 @@ setTimeout(function () { location.reload(1); }, 1000*60*30);
       <div data-id="datagovhits" data-view="Graph" data-title="Convergence" style="background-color:#47bbb3;"  ></div>
     </li>
 -->
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
       <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets tagged with #govhack"></div>
       <i class="icon-twitter icon-background"></i>
     </li>
