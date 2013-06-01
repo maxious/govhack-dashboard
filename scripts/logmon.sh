@@ -71,9 +71,11 @@ while true
 do
  newCount=`wc -l $logFile | sed 's/\([0-9]*\).*/\1/'`
  diff=$(( newCount - lastCount ))
- rate=$(echo "$diff / $frequency" |bc -l)
+ rate=$(echo "$diff / $frequency" |bc -l| awk '{printf "%.0f\n", $1}')
  echo $rate
-curl -d '{ "auth_token": "$key", "current": $rate, "value": $rate }' http://direct.disclosurelo.gs:3030/widgets/$name
+#curl -d '{ "auth_token": "$key", "current": $rate, "value": $rate }' http://direct.disclosurelo.gs:3030/widgets/$name
+echo "{\"auth_token\": \"$apikey\", \"current\": $newCount,\"value\": $newCount }" > statstmp
+curl  --data @statstmp http://direct.disclosurelo.gs:3030/widgets/$apiname
  lastCount=$newCount
  sleep $frequency
 done
