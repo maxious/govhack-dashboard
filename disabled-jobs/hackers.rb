@@ -1,4 +1,5 @@
 current_hackers = 0
+last_hackers = 0
 
 SCHEDULER.every '30s' do
   last_hackers     = current_hackers
