@@ -1,7 +1,7 @@
-current_ready = 0
 last_ready = 0
-current_notready = 0
 last_notready = 0
+current_ready = 0
+current_notready = 0
 # http://hackerspace.govhack.org/?q=teams-by-region
 
 require 'nokogiri'
@@ -10,6 +10,8 @@ require 'open-uri'
 SCHEDULER.every '60s' do
 last_ready = current_ready
 last_notready = current_notready
+current_ready = 0
+current_notready = 0
 doc = Nokogiri::HTML(open('http://hackerspace.govhack.org/?q=teams-by-region'))
 
 doc.css('tr').each do |row|
